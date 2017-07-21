@@ -35,7 +35,6 @@ public class TimePickerMojaPoruka extends DialogFragment implements TimePickerDi
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        // Use the current time as the default values for the picker
         currentTime = Calendar.getInstance();
         currentDate = currentTime.get(Calendar.DATE);
         currentHour = currentTime.get(Calendar.HOUR_OF_DAY);
@@ -43,7 +42,6 @@ public class TimePickerMojaPoruka extends DialogFragment implements TimePickerDi
         currentSecond = currentTime.get(Calendar.SECOND);
         currentMillisecond = currentTime.get(Calendar.MILLISECOND);
 
-        // Create a new instance of TimePickerDialog and return it
         tpd = new TimePickerDialog(getActivity(), R.style.TimePickerStyle, this, currentHour, currentMinute, DateFormat.is24HourFormat(getActivity()));
         tpd.setCanceledOnTouchOutside(false);
         return tpd;
@@ -51,7 +49,6 @@ public class TimePickerMojaPoruka extends DialogFragment implements TimePickerDi
 
     @Override
     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-        // Get the selected Time
 
         cvPoruka = (EditText) getActivity().findViewById(R.id.cv_poruka);
         editTextPoruka = cvPoruka.getText().toString();
@@ -63,7 +60,6 @@ public class TimePickerMojaPoruka extends DialogFragment implements TimePickerDi
         selectedTime.set(Calendar.MILLISECOND, 0);
 
         if (selectedTime.compareTo(currentTime) <= 0) {
-            //Today SetTime passed, count to tomorrow
             selectedTime.add(Calendar.DATE, 1);
             cvPoruka.getText().clear();
             Toast.makeText(getActivity(), "Tvoja poruka stiže sutra u " + String.format("%02d:%02d", selectedHour, selectedMinute), Toast.LENGTH_LONG).show();
