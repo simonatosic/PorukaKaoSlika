@@ -32,7 +32,6 @@ public class TimePickerPorukaIznenadjenja extends DialogFragment implements Time
 
     @Override
     public Dialog onCreateDialog (Bundle savedInstanceState) {
-        // Use the current time as the default values for the picker
         currentTime = Calendar.getInstance();
         currentDate = currentTime.get(Calendar.DATE);
         currentHour = currentTime.get (Calendar.HOUR_OF_DAY);
@@ -40,7 +39,6 @@ public class TimePickerPorukaIznenadjenja extends DialogFragment implements Time
         currentSecond = currentTime.get(Calendar.SECOND);
         currentMillisecond = currentTime.get(Calendar.MILLISECOND);
 
-        // Create a new instance of TimePickerDialog and return it
         tpd = new TimePickerDialog(getActivity(), R.style.TimePickerStyle, this, currentHour, currentMinute, DateFormat.is24HourFormat(getActivity()));
         tpd.setCanceledOnTouchOutside(false);
         return tpd;
@@ -48,7 +46,6 @@ public class TimePickerPorukaIznenadjenja extends DialogFragment implements Time
 
     @Override
     public void onTimeSet (TimePicker timePicker, int selectedHour, int selectedMinute) {
-        // Get the selected Time
 
         Calendar selectedTime = (Calendar) currentTime.clone();
         selectedTime.set(Calendar.HOUR_OF_DAY, selectedHour);
@@ -57,7 +54,6 @@ public class TimePickerPorukaIznenadjenja extends DialogFragment implements Time
         selectedTime.set(Calendar.MILLISECOND, 0);
 
         if (selectedTime.compareTo(currentTime) <= 0){
-            //Today SetTime passed, count to tomorrow
             selectedTime.add(Calendar.DATE, 1);
             Toast.makeText(getActivity(), "Poruka iznenađenja stiže sutra u " + String.format("%02d:%02d", selectedHour, selectedMinute), Toast.LENGTH_LONG).show();
         }
