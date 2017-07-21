@@ -39,16 +39,13 @@ public class MojaPorukaActivity extends AppCompatActivity {
         setupFabListener();
 
         firebaseAuth = FirebaseAuth.getInstance();
-        // Active listen to user logged in or not
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    // User is signed in
                     Log.d("AUTH OPERATIONS", "onAuthStateChanged:signed_in:" + user.getUid());
                 } else {
-                    // User is signed out
                     Log.d("AUTH OPERATIONS", "onAuthStateChanged:signed_out");
                 }
             }
@@ -70,14 +67,12 @@ public class MojaPorukaActivity extends AppCompatActivity {
         uvodMojaPoruka.setTypeface(myCustomFontPoiret);
     }
 
-    // Add Auth state listener in onStart
     @Override
     public void onStart() {
         super.onStart();
         firebaseAuth.addAuthStateListener(authListener);
     }
 
-    // Release listener in onStop
     @Override
     public void onStop() {
         super.onStop();
@@ -102,21 +97,16 @@ public class MojaPorukaActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.appbar_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         Intent intent = new Intent(getApplicationContext(), CustomPreferenceActivity.class);
         startActivity(intent);
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.appbar_menu_postavke) {
             return true;
         }
