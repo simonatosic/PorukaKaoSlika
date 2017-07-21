@@ -36,7 +36,7 @@ public class UrlDatabaseHelper extends SQLiteOpenHelper {
         Log.e("DATABASE OPERATIONS", "One row inserted");
     }
 
-    public Cursor getUrl (SQLiteDatabase sqLiteDatabase){ // Gives data in a form of a cursor object
+    public Cursor getUrl (SQLiteDatabase sqLiteDatabase){
         Cursor cursor;
         String [] columnName = {COLUMN_URL};
         cursor = sqLiteDatabase.query(TABLE_NAME, columnName, null, null, null, null, null);
