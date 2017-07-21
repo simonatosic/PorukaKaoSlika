@@ -23,7 +23,7 @@ PorukaKaoSlika _(Message in a Picture)_ is an Android app where you receive noti
 
 ##### Primljene poruke _(Received Messages)_
 - scrollable gallery of received images in a form of colorful patchwork
-- click an image and swipe for a fullscreen display
+- click an image and swipe for a full screen display
 
 ## Built With
 - [Firebase development platform for Android](https://firebase.google.com/)
