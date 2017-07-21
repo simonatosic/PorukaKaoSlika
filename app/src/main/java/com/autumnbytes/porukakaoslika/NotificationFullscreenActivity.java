@@ -85,16 +85,13 @@ public class NotificationFullscreenActivity extends AppCompatActivity {
         sqLiteDatabase = urlDatabaseHelper.getWritableDatabase();
 
         firebaseAuth = FirebaseAuth.getInstance();
-        // Active listen to user logged in or not
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    // User is signed in
                     Log.d("AUTH OPERATIONS", "onAuthStateChanged:signed_in:" + user.getUid());
                 } else {
-                    // User is signed out
                     Log.d("AUTH OPERATIONS", "onAuthStateChanged:signed_out");
                 }
             }
@@ -106,13 +103,11 @@ public class NotificationFullscreenActivity extends AppCompatActivity {
             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            //Get map of nodes in dataSnapshot
                             collectUrlsPorukaIznenadjenja((Map<String, Object>) dataSnapshot.getValue());
                         }
 
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
-                            //handle databaseError
                         }
                     });
         }
@@ -123,13 +118,11 @@ public class NotificationFullscreenActivity extends AppCompatActivity {
                     new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            //Get map of nodes in datasnapshot
                             collectUrlsMojaPoruka((Map<String, Object>) dataSnapshot.getValue());
                         }
 
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
-                            //handle databaseError
                         }
                     });
         }
@@ -151,14 +144,12 @@ public class NotificationFullscreenActivity extends AppCompatActivity {
         });
     }
 
-    // Add Auth state listener in onStart
     @Override
     public void onStart() {
         super.onStart();
         firebaseAuth.addAuthStateListener(authListener);
     }
 
-    // Release listener in onStop
     @Override
     public void onStop() {
         super.onStop();
@@ -184,11 +175,8 @@ public class NotificationFullscreenActivity extends AppCompatActivity {
     private void collectUrlsPorukaIznenadjenja (Map<String, Object> porukaIznenadjenja) {
         urls = new ArrayList<>();
 
-        // Iterate through each field
         for (Map.Entry<String, Object> entry : porukaIznenadjenja.entrySet()) {
-            // Get map
             Map singleData = (Map) entry.getValue();
-            // Get url field and append to list
             urls.add((String) singleData.get("url"));
         }
 
@@ -208,7 +196,7 @@ public class NotificationFullscreenActivity extends AppCompatActivity {
                     @Override
                     public void onResourceReady(final Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                         progressBar.setVisibility(View.GONE);
-                        imagePreview.setImageBitmap(resource);// Prikaži bitmap u imageview-u
+                        imagePreview.setImageBitmap(resource);
 
                         Thread thread = new Thread(new Runnable() {
                             @Override
@@ -219,7 +207,7 @@ public class NotificationFullscreenActivity extends AppCompatActivity {
                             }
                         });
                         thread.start();
-                        Toast.makeText(NotificationFullscreenActivity.this, "Slika se sprema u primljene poruke", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(NotificationFullscreenActivity.this, "Slika se sprema u primljene poruke", Toast.LENGTH_LONG).show();
                     }
                 });
         urls.clear();
@@ -229,11 +217,8 @@ public class NotificationFullscreenActivity extends AppCompatActivity {
     private void collectUrlsMojaPoruka (Map<String, Object> mojaporuka) {
         urls = new ArrayList<>();
 
-        // Iterate through each field
         for (Map.Entry<String, Object> entry : mojaporuka.entrySet()) {
-            // Get map
             Map singleData = (Map) entry.getValue();
-            // Get url field and append to list
             urls.add((String) singleData.get("url"));
         }
 
@@ -255,8 +240,8 @@ public class NotificationFullscreenActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                         notTextView.setVisibility(View.VISIBLE);
                         pokaziPoruku();
-                        imagePreview.setImageBitmap(resource);// Prikaži bitmap u imageview-u
-                        Toast.makeText(NotificationFullscreenActivity.this, "Slika se sprema u primljene poruke", Toast.LENGTH_SHORT).show();
+                        imagePreview.setImageBitmap(resource);
+                        Toast.makeText(NotificationFullscreenActivity.this, "Slika se sprema u primljene poruke", Toast.LENGTH_LONG).show();
 
                         Thread thread = new Thread(new Runnable() {
                             @Override
@@ -309,7 +294,7 @@ public class NotificationFullscreenActivity extends AppCompatActivity {
 
     private void pokaziPoruku() {
         editTextPoruka = getIntent().getStringExtra("mojaPoruka");
-        notTextView.setMovementMethod(new ScrollingMovementMethod()); // Omogućuje prikaz cijele poruke razlomljene u veliki broj redova
+        notTextView.setMovementMethod(new ScrollingMovementMethod());
         notTextView.setText(editTextPoruka);
     }
 
