@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">PorukaKaoSlika</string>
+
+    <!-- AndroidManifest Labels -->
+    <string name="moja_poruka_activity_label">Moja poruka</string>
+    <string name="poruka_iznenadjenja_activity_label">Poruka iznenađenja</string>
+    <string name="primljene_poruke_activity_label">Primljene poruke</string>
+    <string name="notification_fullscreen_activity_label">NotificationFullscreenActivity</string>
+    <string name="gallery_fullscreen_activity_label">GalleryFullscreenActivity</string>
+
+    <!-- Naslovnica Activity Strings -->
+    <string name="tv_naslov">Poruka\nKao\nSlika</string>
+    <string name="tv_link_moja_poruka">Moja poruka</string>
+    <string name="tv_link_poruka_iznenadjenja">Poruka iznenađenja</string>
+    <string name="tv_link_primljene_poruke">Primljene poruke</string>
+
+    <!-- AppBar Menu String -->
+    <string name="appbar_menu_postavke">Postavke</string>
+    <string name="znacajke_naslov">U aplikaciji još želim</string>
+    <string name="znacajke_broj_poruka_iznenadjenja">Veći broj različitih poruka iznenađenja</string>
+    <string name="znacajke_font_moja_poruka">Mogućnost da tekst mojih poruka bude u različitim fontovima</string>
+    <string name="znacajke_brisanje_primljenih">Mogućnost brisanja primljenih poruka</string>
+    <string name="znacajke_dijeljenje_primljenih">Mogućnost dijeljenja primljenih poruka</string>
+
+    <!-- Moja Poruka Activity Strings -->
+    <string name="tv_uvod_moja_poruka">Odaberi vrijeme unutar 24 sata\nPoruka stiže kao citat u slici</string>
+    <string name="cv_naslov">Napiši poruku</string>
+
+    <!-- Poruka Iznenadjenja Activity String -->
+    <string name="tv_uvod_poruka_iznenadjenja">Odaberi vrijeme\nunutar 24 sata\n\n\nStiže ti slika\ns motivirajućim citatom</string>
+
+    <!-- Notification Close Button String -->
+    <string name="btn_close">x</string>
+
+    <!-- No Network Toast String -->
+    <string name="nema_internet_veze">Provjeri stanje svoje internetske veze</string>
+
+</resources>

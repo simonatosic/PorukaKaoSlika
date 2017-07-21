@@ -1,0 +1,60 @@
+<resources>
+
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Translucent ActionBar theme -->
+    <style name="AppTheme.ActionBar.Translucent" parent="AppTheme">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+    </style>
+
+    <!-- No ActionBar theme -->
+    <style name="NaslovnicaActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Naslovnica Title style -->
+    <style name="NaslovnicaTitleStyle">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/tv_naslov_text_size</item>
+    </style>
+
+    <!-- Naslovnica TextView style -->
+    <style name="NaslovnicaTextViewStyle">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/tv_link_text_size</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <!-- Time Picker style -->
+    <style name="TimePickerStyle" parent="Base.Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+    </style>
+
+    <!-- Intro style -->
+    <style name="IntroStyle">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <!-- Clickable style -->
+    <style name="ClickableStyle">
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="CounterStyle" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+</resources>

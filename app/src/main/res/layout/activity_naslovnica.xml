@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.autumnbytes.porukakaoslika.NaslovnicaActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorMaastricht">
+
+    <TextView
+        android:id="@+id/tv_naslov"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tv_naslov"
+        android:layout_above="@+id/space"
+        android:layout_alignParentStart="true"
+        style="@style/NaslovnicaTitleStyle"/>
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/tv_link_moja_poruka"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/space"
+        android:gravity="center"
+        android:text="@string/tv_link_moja_poruka"
+        style="@style/NaslovnicaTextViewStyle" />
+
+    <TextView
+        android:id="@+id/tv_link_poruka_iznenadjenja"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_link_moja_poruka"
+        android:gravity="center"
+        android:text="@string/tv_link_poruka_iznenadjenja"
+        style="@style/NaslovnicaTextViewStyle" />
+
+    <TextView
+        android:id="@+id/tv_link_primljene_poruke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_link_poruka_iznenadjenja"
+        android:gravity="center"
+        android:text="@string/tv_link_primljene_poruke"
+        style="@style/NaslovnicaTextViewStyle" />
+
+</RelativeLayout>

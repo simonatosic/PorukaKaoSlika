@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.autumnbytes.porukakaoslika">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_white"
+        android:label="@string/app_name">
+        <activity
+            android:name=".NaslovnicaActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/NaslovnicaActivityTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MojaPorukaActivity"
+            android:label="@string/moja_poruka_activity_label"
+            android:parentActivityName=".NaslovnicaActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PorukaIznenadjenjaActivity"
+            android:label="@string/poruka_iznenadjenja_activity_label"
+            android:parentActivityName=".NaslovnicaActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PrimljenePorukeActivity"
+            android:label="@string/primljene_poruke_activity_label"
+            android:parentActivityName=".NaslovnicaActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".GalleryFullscreenActivity"
+            android:label="@string/gallery_fullscreen_activity_label"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/NaslovnicaActivityTheme" />
+        <activity
+            android:name=".NotificationFullscreenActivity"
+            android:label="@string/notification_fullscreen_activity_label"
+            android:parentActivityName=".PrimljenePorukeActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/NaslovnicaActivityTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.autumnbytes.porukakaoslika.PrimljenePorukeActivity" />
+        </activity>
+
+        <meta-data
+            android:name="com.autumnbytes.porukakaoslika.GlideConfiguration"
+            android:value="GlideModule" />
+
+        <receiver android:name=".AlarmReceiverMojaPoruka" />
+        <receiver android:name=".AlarmReceiverPorukaIznenadjenja" />
+
+        <activity android:name=".CustomPreferenceActivity"></activity>
+    </application>
+
+</manifest>

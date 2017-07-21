@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorMaastricht"
+    android:orientation="vertical"
+    tools:context="com.autumnbytes.porukakaoslika.MojaPorukaActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        card_view:cardCornerRadius="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@color/colorWhite">
+
+            <TextView
+                android:id="@+id/cv_naslov"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/cv_naslov"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterEnabled="true"
+                app:counterMaxLength="80"
+                app:counterTextAppearance="@style/CounterStyle">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/cv_poruka"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textMultiLine"
+                    android:maxWidth="100dp"
+                    android:maxLength="80"
+                    android:lines="6"
+                    android:textColor="@color/colorPrimary"/>
+
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_uvod_moja_poruka"
+        style="@style/IntroStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="380dp"
+        android:gravity="center"
+        android:text="@string/tv_uvod_moja_poruka" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:scaleType="center"
+        android:src="@drawable/hexaclock_100"
+        app:fabSize="normal"
+        app:layout_anchor="@id/card_view"
+        app:layout_anchorGravity="center_horizontal|bottom" />
+
+</android.support.design.widget.CoordinatorLayout>

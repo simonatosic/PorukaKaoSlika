@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
+    <Preference
+        android:key ="znacajke1"
+        android:title="@string/znacajke_naslov"/>
+
+    <CheckBoxPreference
+        android:key ="znacajke2"
+        android:summary="@string/znacajke_broj_poruka_iznenadjenja"
+        android:defaultValue="false"/>
+
+    <CheckBoxPreference
+        android:key ="znacajke3"
+        android:summary="@string/znacajke_font_moja_poruka"
+        android:defaultValue="false"/>
+
+    <CheckBoxPreference
+        android:key ="znacajke4"
+        android:summary="@string/znacajke_brisanje_primljenih"
+        android:defaultValue="false"/>
+
+    <CheckBoxPreference
+        android:key ="znacajke5"
+        android:summary="@string/znacajke_dijeljenje_primljenih"
+        android:defaultValue="false"/>
+
+</PreferenceScreen>

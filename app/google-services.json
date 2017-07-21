@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "763003655350",
+    "firebase_url": "https://poruka-kao-slika-89d5b.firebaseio.com",
+    "project_id": "poruka-kao-slika-89d5b",
+    "storage_bucket": "poruka-kao-slika-89d5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763003655350:android:dd4d66c0a94c6175",
+        "android_client_info": {
+          "package_name": "com.autumnbytes.porukakaoslika"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763003655350-2oru1foqrhhti83c485gpjcedkitn778.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.autumnbytes.porukakaoslika",
+            "certificate_hash": "049b8917a2b9d95573fba8d98bfbe38cde2c4f36"
+          }
+        },
+        {
+          "client_id": "763003655350-rraegjnupl4fa0fi3ureste0v8g1fo5t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgnvTelwF5LJFndQAMy82H0yHJtQX_x2g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763003655350-rraegjnupl4fa0fi3ureste0v8g1fo5t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
