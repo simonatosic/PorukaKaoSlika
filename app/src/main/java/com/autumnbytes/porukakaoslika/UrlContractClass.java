@@ -6,8 +6,7 @@ import android.provider.BaseColumns;
  * Created by Simona Tošić on 14-May-17.
  */
 
-public class UrlContractClass implements BaseColumns { // The BaseColumns interface provides two columns to the table:
-    // the _ID column, which will be auto incremented whenever a new row is inserted in the table, and a _COUNT column
+public class UrlContractClass implements BaseColumns {
 
         //COLUMNS
         public static final String COLUMN_URL = "url";
